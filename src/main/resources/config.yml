@@ -1,0 +1,19 @@
+#YOU NEED TO USE MINI MESSAGE:
+
+FLAG_FORMAT: '<color:#5c24d0> <b>Nightmare <color:#8121ff>»</color> </b> <color:#9959ff>%player%</color> <color:#5c24d0>failed</color> <b><color:#5d52ff>%check%</color></b> <color:#6363ff></color> <color:#8324ff>[<color:#c07dff>%vl%</color>]</color> <dark_gray>%desc%</dark_gray> <color:#757575>| %error%</color>'
+PUNISH_FORMAT: '<color:#5c24d0> <b>Nightmare <color:#8121ff>»</color> </b> <color:#9959ff>%player%</color> <color:#5c24d0>got punished for</color> <b><color:#5d52ff>%check%</color></b> <color:#6363ff></color>'
+PUNISH_MESSAGE: '<color:#5c24d0> <color:#ab0fff><b>[</b></color><b>Nightmare</b><color:#ab0fff><b>]</b></color> </color><b><i>[</i></b><red><u><i><b>Unfair Advantage</b></i></u></red><b><i>]</i></b>'
+
+checks:
+  Speed(A):
+    enabled: true
+    VLAfterFlag: 23
+    description: 'Friction Check'
+    setBack: true
+    FlagonSetBack: 1
+    punish: true
+    FlagAfterPunish: 3
+    run:
+      # Placeholders -> BaseKick (Kicks the player [BUILT IN])
+      - '{baseKick}'
+

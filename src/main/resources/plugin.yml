@@ -1,0 +1,4 @@
+name: NightmareAC
+version: '${version}'
+main: me.dragon.nightmareac.NightmareAC
+api-version: '1.20'
