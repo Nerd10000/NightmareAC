@@ -10,6 +10,7 @@ public class MovementPacket implements PacketListener {
     public static double x,y,z,lx,ly,lz,deltaX,deltaZ,deltaY,deltaXZ,lastDeltaXZ;
     public static int airTicks,groundTicks;
     public static float Acceleration,lastAccel;
+    public static boolean isInAir;
     @Override
     public void onPacketReceive(PacketReceiveEvent event) {
         if (WrapperPlayClientPlayerFlying.isFlying(event.getPacketType()) || event.getPacketType() == PacketType.Play.Client.PLAYER_FLYING ||
@@ -40,6 +41,9 @@ public class MovementPacket implements PacketListener {
                 groundTicks++;
             }
 
+            if (airTicks > 2){
+                isInAir = true;
+            }
         }
             // Handle movement packet logic here
     }

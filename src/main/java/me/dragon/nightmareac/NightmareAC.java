@@ -4,6 +4,7 @@ import com.github.retrooper.packetevents.PacketEvents;
 import com.github.retrooper.packetevents.event.PacketListenerPriority;
 import io.github.retrooper.packetevents.factory.spigot.SpigotPacketEventsBuilder;
 import me.dragon.nightmareac.modules.movement.speed.SpeedA;
+import me.dragon.nightmareac.utils.BukkitEvents;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.bukkit.plugin.Plugin;
@@ -26,6 +27,7 @@ public final class NightmareAC extends JavaPlugin {
         // Plugin startup logic
         plugin = this;
         saveDefaultConfig();
+        getServer().getPluginManager().registerEvents(new BukkitEvents(),this);
         PacketEvents.getAPI().getEventManager().registerListener(new MovementPacket(), PacketListenerPriority.LOW);
         PacketEvents.getAPI().getEventManager().registerListener(new SpeedA(), PacketListenerPriority.LOW);
 
